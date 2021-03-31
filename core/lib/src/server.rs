@@ -116,8 +116,8 @@ impl Rocket {
         tx: oneshot::Sender<hyper::Response<hyper::Body>>,
     ) {
         match self.make_response(response, tx).await {
-            Ok(()) => info_!("{}", Paint::green("Response succeeded.")),
-            Err(e) => error_!("Failed to write response: {:?}.", e),
+            Ok(()) => (),//info_!("{}", Paint::green("Response succeeded.")),
+            Err(e) => (),//error_!("Failed to write response: {:?}.", e),
         }
     }
 
